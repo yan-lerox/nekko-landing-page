@@ -14,11 +14,6 @@ import {
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native';
 import * as Font from 'expo-font';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import type { RootStackParamList } from '../App';
-
-
-type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>;
 
 // Color constants based on the provided palette
 const COLORS = {
@@ -123,7 +118,6 @@ const MarketplaceRibbon = () => {
 };
 
 export default function HomeScreen() {
-  const navigation = useNavigation<HomeScreenNavigationProp>();
   const { width } = useWindowDimensions();
   const isTablet = width > 768;
   const isDesktop = width > 1024;

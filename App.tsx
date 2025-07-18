@@ -8,28 +8,13 @@ import MarketplaceScreen from "./screens/MarketplaceScreen"
 import AboutScreen from "./screens/AboutScreen"
 import CareersScreen from "./screens/CareersScreen"
 
-import { RouteProp } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-
-// Typings
-type AboutScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'About'>;
-type AboutScreenRouteProp = RouteProp<RootStackParamList, 'About'>;
-
-
-
-
-type RootStackParamList = {
-  Home: undefined;
-  Marketplace: undefined;
-  About: undefined;
-  Careers: undefined;
-};
-
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator();
 
 function RootStack() {
   return (
-    <Stack.Navigator id={undefined} screenOptions={{ headerShown: false }}>
+    <Stack.Navigator screenOptions={{
+    headerShown: false
+  }}>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Marketplace" component={MarketplaceScreen} />
       <Stack.Screen name="About" component={AboutScreen} />
@@ -41,7 +26,7 @@ function RootStack() {
 export default function App() {
   return (
     <SafeAreaProvider style={styles.container}>
-      <Toaster />
+    <Toaster />
       <NavigationContainer>
         <RootStack />
       </NavigationContainer>

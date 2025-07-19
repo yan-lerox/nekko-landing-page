@@ -1,5 +1,4 @@
 import React from 'react';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import {
   View,
   Text,
@@ -12,17 +11,6 @@ import {
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native';
-
-
-type RootStackParamList = {
-  Home: undefined;
-  Marketplace: undefined;
-  About: undefined;
-  Careers: undefined;
-};
-
-type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Careers'>;
-
 
 // Color constants based on the provided palette
 const COLORS = {
@@ -79,8 +67,7 @@ export default function CareersScreen() {
   const { width } = useWindowDimensions();
   const isTablet = width > 768;
   const isDesktop = width > 1024;
-  const navigation = useNavigation<NavigationProp>();
-
+  const navigation = useNavigation();
   
   // Job listings data
   const jobListings = [

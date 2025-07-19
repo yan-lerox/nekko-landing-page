@@ -1,46 +1,16 @@
-
-import React, { useEffect, useState } from 'react';
-import { useRoute } from '@react-navigation/native';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
   StyleSheet,
   ScrollView,
   TouchableOpacity,
-  useWindowDimensions,
   SafeAreaView,
-  Platform,
-  Image,
+  useWindowDimensions,
   Linking,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import RootStackParamList from '../App';
-
-
-
-
-type RootStackParamList = 'About'
-const navigation = useNavigation<AboutScreenNav>();
-
-export const AboutScreen = () => {
-  const navigation = useNavigation<AboutScreenNavigationProp>();
-  const { width } = useWindowDimensions();
-
-type AboutScreenRouteParams = {
-  initialTab?: string;
-};
-
-type AboutScreenProps = {
-  route: { params: AboutScreenRouteParams };
-};
-
-/*const AboutScreen = ({ route }: AboutScreenProps) => {
-  const initialTab = route?.params?.initialTab ?? 'Home';
-  // ...
-}*/
-
+import { useNavigation, useRoute } from '@react-navigation/native';
 
 // Color constants based on the provided palette
 const COLORS = {
@@ -763,4 +733,3 @@ const styles = StyleSheet.create({
     fontFamily: 'monospace',
   },
 });
-}

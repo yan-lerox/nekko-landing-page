@@ -1,5 +1,4 @@
 import React from 'react';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import {
   View,
   Text,
@@ -12,17 +11,6 @@ import {
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native';
-
-type RootStackParamList = {
-  Home: undefined;
-  Marketplace: undefined;
-  About: undefined;
-  Careers: undefined;
-};
-type MarketplaceScreenNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
-  'Marketplace'
->;
 
 // Color constants based on the provided palette
 const COLORS = {
@@ -90,7 +78,7 @@ export default function MarketplaceScreen() {
   const { width } = useWindowDimensions();
   const isTablet = width > 768;
   const isDesktop = width > 1024;
-  const navigation = useNavigation<MarketplaceScreenNavigationProp>();
+  const navigation = useNavigation();
   const [activeCategory, setActiveCategory] = React.useState('All');
 
   const categories = [
